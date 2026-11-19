@@ -1,0 +1,12 @@
+node_modules/
+test-results/
+playwright-report/
+supabase/.temp/
+supabase/.branches/
+.env
+.env.*
+*.log
+_site/
+
+# Ekran görüntüleri (depoya girmez)
+ekran_goruntuleri/

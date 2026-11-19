@@ -1,0 +1,245 @@
+/* =====================================================================
+   Mağaza (ürün sayfası) stilleri — "Tivana"
+   ---------------------------------------------------------------------
+   DEĞİŞMEZ: Aynı cihaz türündeki 6 versiyon arasında yalnızca şunlar değişir:
+     --buton-dolgu   hedef butonun dolgu rengi
+     --vurgu-dolgu   dört vurgu öğesinin dolgu rengi
+     hedef butonun bulunduğu yuva (K1 / K2)
+     mobil alt çubuğun varlığı (yalnızca mobil K2)
+   Bu iki renk değişkeni JavaScript'ten deney.json'daki değerlerle verilir.
+   Başka hiçbir öğenin yeri, boyutu veya metni koşula bağlı DEĞİLDİR.
+   Bütün yükseklikler sabit pikseldir; böylece içerik koşula göre kaymaz.
+   Animasyon ve hover/basılı durum değişikliği yoktur.
+   ===================================================================== */
+
+.magaza {
+  --buton-dolgu: #C8CDD4;
+  --vurgu-dolgu: #D6E4F0;
+  --gri-oge: #F0F4F8;
+  --gri-oge-kenar: #D9E2EC;
+  --gri-oge-yazi: #334E68;
+  --ikon: #627D98;
+  background: var(--zemin);
+  color: var(--metin);
+  font-family: var(--yazi-tipi);
+}
+
+/* :where() özgüllüğü sıfırdır; böylece aşağıdaki sınıf kuralları (ör. hedef
+   butonun 16 px yarı kalın yazısı) bu temel kuralı her zaman ezer. */
+:where(.magaza) :where(button) { font-family: inherit; color: inherit; }
+:where(.magaza) :where(h1, h2, p, ul, figure) { margin: 0; }
+
+/* ---- Tıklanabilir görünen öğeler: imleç değişir, görünüm değişmez ---- */
+.magaza [data-tiklanabilir] { cursor: pointer; }
+
+/* ---- Hedef buton ----
+   Boyut, yazı, yazı tipi, yazı rengi, köşe, kenarlık ve gölge her koşulda aynı. */
+.hedef-buton {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none;
+  background: var(--buton-dolgu);
+  color: #102A43;
+  font-family: var(--yazi-tipi);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.hedef-buton:hover,
+.hedef-buton:active,
+.hedef-buton:focus,
+.hedef-buton:focus-visible { background: var(--buton-dolgu); color: #102A43; outline: none; box-shadow: none; }
+
+/* ---- Yuvalar: buton olsun olmasın aynı yüksekliği kaplar, zemin beyaz ---- */
+.yuva { background: var(--yuzey); }
+
+/* ---- Vurgu öğeleri (kampanya bandı, %20 indirim, Hızlı kargo, kategori) ---- */
+.vurgu {
+  background: var(--vurgu-dolgu);
+  color: #102A43;
+  font-weight: 600;
+}
+
+/* ---- Sade gri öğeler: Favorilere ekle, adet seçici, Vazgeç ---- */
+.gri-oge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--gri-oge-kenar);
+  border-radius: 8px;
+  background: var(--gri-oge);
+  color: var(--gri-oge-yazi);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.gri-oge:hover, .gri-oge:active, .gri-oge:focus { background: var(--gri-oge); outline: none; }
+.favori-butonu svg { width: 18px; height: 18px; flex: none; }
+.favori-butonu .kalp { fill: none; stroke: var(--ikon); stroke-width: 2; }
+.favori-butonu[aria-pressed="true"] .kalp { fill: var(--ikon); }
+.adet-secici { padding: 0; gap: 0; }
+.adet-secici button {
+  width: 34px; height: 38px; border: 0; padding: 0; background: transparent;
+  font-size: 18px; font-weight: 600; color: var(--gri-oge-yazi);
+}
+.adet-degeri { width: 32px; text-align: center; font-variant-numeric: tabular-nums; }
+
+/* ---- Üst çubuk ---- */
+.ust-cubuk { background: var(--yuzey); border-bottom: 1px solid var(--kenar); }
+.ust-cubuk-ic { display: flex; align-items: center; gap: 12px; }
+.ust-dugme {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: 40px; border: 0; border-radius: 8px; background: transparent; padding: 0 8px;
+  color: var(--gri-oge-yazi); font-size: 14px; font-weight: 600;
+}
+.ust-dugme svg { width: 22px; height: 22px; stroke: var(--ikon); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.magaza-logosu { font-size: 22px; font-weight: 600; letter-spacing: 0.5px; color: #243B53; }
+.arama-kutusu {
+  display: flex; align-items: center; gap: 8px; flex: 1 1 auto; min-width: 0;
+  height: 40px; padding: 0 12px;
+  border: 1px solid var(--kenar); border-radius: 8px; background: var(--gri-oge);
+  color: #829AB1; font-size: 14px; white-space: nowrap; overflow: hidden;
+}
+.arama-kutusu svg { width: 18px; height: 18px; stroke: var(--ikon); fill: none; stroke-width: 2; flex: none; }
+
+.kampanya-bandi {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; white-space: nowrap; overflow: hidden;
+}
+
+.kategori-vurgusu, .indirim-etiketi, .kargo-rozeti {
+  display: inline-flex; align-items: center; height: 26px; padding: 0 10px;
+  border-radius: 13px; font-size: 13px; white-space: nowrap;
+}
+.rozetler { display: flex; gap: 8px; }
+
+.urun-adi { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fiyat { font-weight: 600; font-variant-numeric: tabular-nums; }
+.kisa-aciklama { color: var(--metin-ikincil); overflow: hidden; }
+.urun-gorseli { background: var(--gri-oge); border-radius: 8px; overflow: hidden; }
+.urun-gorseli img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+.teslimat-basligi { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.teslimat-listesi { padding-left: 18px; font-size: 14px; color: var(--metin-ikincil); line-height: 1.6; }
+
+.alt-bolum { background: var(--yuzey); border-top: 1px solid var(--kenar); }
+.alt-bolum h2 { font-size: 18px; font-weight: 600; margin: 0 0 10px; }
+.alt-bolum p { margin: 0 0 12px; line-height: 1.65; }
+.alt-bolum ul { padding-left: 20px; line-height: 1.7; }
+.ozellik-tablosu { width: 100%; border-collapse: collapse; font-size: 15px; }
+.ozellik-tablosu th, .ozellik-tablosu td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--kenar); vertical-align: top; }
+.ozellik-tablosu th { width: 40%; font-weight: 600; color: var(--gri-oge-yazi); }
+.alt-bilgi { text-align: center; font-size: 13px; color: #829AB1; padding: 24px 16px; }
+
+/* =====================================================================
+   MASAÜSTÜ — içerik 960 px sabit genişlikte ve ortalıdır; esnemez.
+   İlk ekran (1024 × 600) yerleşimi:
+     üst çubuk 64 | bant 16+36+16 | kart 24 iç boşluk
+     bilgi alanı: kategori 36 · ad 46 · rozet 40 · kısa açıklama 82 ·
+                  işlem satırı 56 · fiyat 48 · Yuva 1 (48)
+     → hedef buton (K1) yaklaşık 464–512 px arasında; (K2) 172–220 px.
+   ===================================================================== */
+.magaza-masaustu { min-width: 1000px; }
+.magaza-masaustu .sabit-genislik { width: 960px; margin: 0 auto; }
+.magaza-masaustu .ust-cubuk-ic { height: 64px; }
+.magaza-masaustu .arama-kutusu { max-width: 420px; }
+.magaza-masaustu .sepet-simgesi { margin-left: auto; }
+.magaza-masaustu .kampanya-bandi { height: 36px; margin: 16px auto; border-radius: 8px; }
+
+.magaza-masaustu .urun-karti {
+  display: grid;
+  grid-template-columns: 260px 352px 252px;
+  column-gap: 24px;
+  align-items: start;
+  padding: 24px;
+  background: var(--yuzey);
+  border: 1px solid var(--kenar);
+  border-radius: 12px;
+}
+.magaza-masaustu .urun-gorseli { width: 260px; height: 260px; }
+.magaza-masaustu .bilgi-alani { display: flex; flex-direction: column; align-items: flex-start; }
+.magaza-masaustu .kategori-vurgusu { margin-bottom: 10px; }
+.magaza-masaustu .urun-adi { width: 352px; font-size: 28px; line-height: 36px; height: 36px; margin-bottom: 10px; }
+.magaza-masaustu .rozetler { height: 26px; margin-bottom: 14px; }
+.magaza-masaustu .kisa-aciklama { font-size: 15px; line-height: 22px; height: 66px; margin-bottom: 16px; }
+.magaza-masaustu .islem-satiri { display: flex; gap: 12px; height: 40px; margin-bottom: 16px; }
+.magaza-masaustu .favori-butonu { width: 140px; }
+.magaza-masaustu .adet-secici { width: 104px; }
+.magaza-masaustu .vazgec-butonu { width: 84px; }
+.magaza-masaustu .fiyat { font-size: 28px; line-height: 36px; height: 36px; margin-bottom: 12px; }
+.magaza-masaustu .yuva { width: 220px; height: 48px; }
+.magaza-masaustu .hedef-buton { width: 220px; height: 48px; }
+
+.magaza-masaustu .yan-panel {
+  width: 252px; padding: 16px;
+  border: 1px solid var(--kenar); border-radius: 8px; background: var(--yuzey);
+}
+.magaza-masaustu .yan-panel .yuva { margin-bottom: 16px; }
+
+.magaza-masaustu .alt-bolumler { margin: 24px auto 0; display: grid; gap: 16px; }
+.magaza-masaustu .alt-bolum { padding: 24px; border: 1px solid var(--kenar); border-radius: 12px; }
+.magaza-masaustu .alt-bilgi { margin-top: 24px; }
+
+/* =====================================================================
+   MOBİL — tek sütun, yukarıdan aşağı:
+     üst çubuk 52 · kampanya bandı 28 · (12) kategori 24+8 · ad 28+6 ·
+     rozetler 24+8 · fiyat 32+8 · Yuva 1 (52) → K1 butonu ≈ 230–282 px
+     ürün görseli · kısa açıklama · favori/adet/vazgeç · teslimat ·
+     açıklama · özellikler · bakım · alt bilgi · alt boşluk (76, her koşulda)
+   K2: ekranın altına sabit alt çubuk (76 px) — Yuva 2.
+   ===================================================================== */
+.magaza-mobil .ust-cubuk-ic { height: 52px; padding: 0 8px; gap: 6px; }
+.magaza-mobil .ust-dugme { width: 40px; padding: 0; }
+.magaza-mobil .magaza-logosu { font-size: 18px; width: auto; padding: 0 4px; }
+.magaza-mobil .arama-kutusu { height: 36px; padding: 0 10px; font-size: 13px; }
+.magaza-mobil .kampanya-bandi { height: 28px; font-size: 13px; padding: 0 8px; }
+
+.magaza-mobil .urun-alani { background: var(--yuzey); padding: 12px 16px 16px; }
+.magaza-mobil .kategori-vurgusu { height: 24px; border-radius: 12px; margin-bottom: 8px; font-size: 12px; }
+.magaza-mobil .urun-adi { font-size: 20px; line-height: 28px; height: 28px; margin-bottom: 6px; }
+.magaza-mobil .rozetler { height: 24px; margin-bottom: 8px; }
+.magaza-mobil .indirim-etiketi, .magaza-mobil .kargo-rozeti { height: 24px; border-radius: 12px; font-size: 12px; }
+.magaza-mobil .fiyat { font-size: 24px; line-height: 32px; height: 32px; margin-bottom: 8px; }
+.magaza-mobil .yuva { height: 52px; }
+.magaza-mobil .hedef-buton { width: 100%; height: 52px; }
+.magaza-mobil .yuva-1 { margin-bottom: 12px; }
+.magaza-mobil .urun-gorseli { width: 100%; height: 240px; margin-bottom: 12px; }
+.magaza-mobil .kisa-aciklama { font-size: 15px; line-height: 22px; margin-bottom: 12px; }
+.magaza-mobil .islem-satiri { display: flex; gap: 8px; height: 40px; margin-bottom: 16px; }
+.magaza-mobil .favori-butonu { flex: 1 1 auto; }
+.magaza-mobil .adet-secici { width: 104px; flex: none; }
+.magaza-mobil .vazgec-butonu { width: 76px; flex: none; }
+.magaza-mobil .teslimat { padding: 12px; border: 1px solid var(--kenar); border-radius: 8px; }
+.magaza-mobil .alt-bolum { padding: 16px; }
+.magaza-mobil .alt-bolum h2 { font-size: 17px; }
+.magaza-mobil .alt-bolum p { font-size: 15px; }
+.magaza-mobil .ozellik-tablosu { font-size: 14px; }
+
+/* Alt boşluk her koşulda aynıdır (alt çubuk olsa da olmasa da). */
+.magaza-mobil .alt-bosluk { height: 76px; }
+.magaza-mobil .alt-cubuk {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+  height: 76px; padding: 12px 16px;
+  background: var(--yuzey); border-top: 1px solid var(--kenar);
+}
+
+/* =====================================================================
+   ÖNİZLEME (tercih sorusu): aynı şablonun ilk ekranının küçültülmüş,
+   etkileşimsiz hali. Çerçeve, ilk ekran boyutunda (masaüstü 1024 × 600,
+   mobil 360 × 560) çizilir ve transform ile küçültülür.
+   ===================================================================== */
+.onizleme-cerceve { position: relative; overflow: hidden; background: var(--zemin); transform-origin: 0 0; pointer-events: none; }
+.onizleme-cerceve .alt-cubuk { position: absolute; }
+.onizleme-kutusu { overflow: hidden; border: 1px solid var(--kenar); border-radius: 8px; background: var(--zemin); }

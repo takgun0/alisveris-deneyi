@@ -1,0 +1,34 @@
+/* =====================================================================
+   Demo modu şeridi (?demo=1). Normal katılımcı sayfasında yüklenmez.
+   Şerit sabit konumludur; sayfanın üstünde şerit kadar boşluk bırakılır,
+   böylece şerit hiçbir öğenin üstünü kapatmaz. Uyarı ve onay örtüleri
+   (z-index 900/1000) şeridin üstünde kalır.
+   ===================================================================== */
+
+body.demo-modu { padding-top: var(--demo-serit, 36px); }
+
+.demo-serit {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 800;
+  height: var(--demo-serit, 36px);
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 10px;
+  background: #102A43; color: #FFFFFF;
+  font-family: var(--yazi-tipi); font-size: 13px; line-height: 1;
+  overflow-x: auto; white-space: nowrap;
+}
+.demo-etiket { padding: 4px 6px; border-radius: 4px; background: #F0B429; color: #102A43; letter-spacing: 0.05em; }
+.demo-sayac { font-variant-numeric: tabular-nums; min-width: 230px; }
+.demo-son { color: #BCCCDC; }
+.demo-bosluk { flex: 1; }
+.demo-secim, .demo-dugme {
+  height: 26px; padding: 0 6px;
+  border: 1px solid #486581; border-radius: 4px;
+  background: #243B53; color: #FFFFFF;
+  font: inherit;
+}
+.demo-dugme { cursor: pointer; }
+.demo-secim:disabled, .demo-dugme:disabled { opacity: 0.5; cursor: default; }
+
+/* Elle "mobil" seçilince geniş pencerede mobil şablon telefon genişliğinde gösterilir. */
+body.demo-mobil .sahne { max-width: 400px; margin: 0 auto; box-shadow: 0 0 0 1px #D9E2EC; }
+body.demo-mobil .alt-cubuk { max-width: 400px; margin: 0 auto; }

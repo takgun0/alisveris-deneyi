@@ -1,0 +1,355 @@
+{
+  "aciklama": "Ürün içerikleri. Hepsi kurgusal ve markasızdır. Her ürün: tek cümlelik kısa açıklama, toplam 210–230 kelimelik üç paragraf, 8 satırlı teknik özellik tablosu, 5 maddelik kullanım ve bakım. testler/birim/icerik.test.mjs bu kuralları doğrular.",
+  "urunler": {
+    "kulaklik": {
+      "kategori": "Elektronik",
+      "kisa_aciklama": "Hafif gövdesi ve uzun pil ömrüyle gün boyu rahat dinleme sunan kablosuz kulak üstü kulaklık.",
+      "aciklama": [
+        "Bu kablosuz kulaklık, günlük kullanımda konforu ön plana çıkaran hafif bir gövdeye sahiptir. Yumuşak kulak yastıkları uzun süre takıldığında bile baskı yapmaz ve başa dengeli biçimde oturur. Katlanabilir yapısı sayesinde çantada az yer kaplar; birlikte gelen kumaş kılıf taşıma sırasında çizilmelere karşı koruma sağlar. Ayarlanabilir kafa bandı farklı baş ölçülerine kolayca uyum gösterir ve hareket ederken yerinden kaymaz. Kafa bandının iç yüzeyindeki ince dolgu, gözlük takan kullanıcılarda bile uzun dinleme sırasında rahatsızlık oluşturmayacak biçimde özenle yerleştirilmiştir.",
+        "Tek şarjla yaklaşık otuz saat müzik dinlemenize olanak tanıyan pil, yoğun bir haftayı bile rahatça çıkarır. On dakikalık hızlı şarj birkaç saatlik kullanım için yeterlidir. Kulaklık, telefon ve bilgisayarla aynı anda eşleşebilir; aramalar geldiğinde otomatik olarak geçiş yapar. Sağ kulaktaki düğmeler ses düzeyini ayarlamayı, parçalar arasında geçmeyi ve aramaları yanıtlamayı tek elle kolaylaştırır. Kulaklığı kapatmayı unuttuğunuzda, bir süre ses gelmezse kendini otomatik olarak kapatarak pilin gereksiz yere tükenmesini önler ve enerji tasarrufu sağlar.",
+        "Dengeli ses ayarı, konuşma kayıtlarında ve müzikte doğal bir tını sunar. Dahili mikrofon, sessiz ortamlarda net ve anlaşılır görüşmeler yapmanıza yardımcı olur. Kablolu kullanım için bir ses kablosu da kutudan çıkar; pil bittiğinde bile dinlemeye devam edebilirsiniz. Sade renkleri ve yumuşak dokulu yüzeyiyle hem ofiste hem yolculukta kullanılabilecek, uzun ömürlü ve pratik bir dinleme seçeneğidir. Kutudaki kısa kullanım kılavuzu, ilk eşleştirmeden ses ayarlarına kadar bütün adımları sade bir dille ve görsellerle anlatır, böylece kurulum birkaç dakika sürer."
+      ],
+      "ozellikler": [
+        [
+          "Bağlantı",
+          "Kablosuz ve 3,5 mm kablo"
+        ],
+        [
+          "Pil ömrü",
+          "Yaklaşık 30 saat"
+        ],
+        [
+          "Şarj süresi",
+          "Yaklaşık 2 saat"
+        ],
+        [
+          "Ağırlık",
+          "210 g"
+        ],
+        [
+          "Kulak yastığı",
+          "Yumuşak köpük, değiştirilebilir"
+        ],
+        [
+          "Mikrofon",
+          "Dahili, tek yönlü"
+        ],
+        [
+          "Kapsama",
+          "10 metreye kadar"
+        ],
+        [
+          "Kutu içeriği",
+          "Kulaklık, kılıf, şarj ve ses kablosu"
+        ]
+      ],
+      "bakim": [
+        "Kulak yastıklarını haftada bir kuru ve yumuşak bir bezle silin.",
+        "Kulaklığı yağmura ve yüksek neme maruz bırakmayın.",
+        "Uzun süre kullanmayacaksanız pili yarı dolu halde saklayın.",
+        "Taşırken kulaklığı katlayıp kılıfının içine yerleştirin.",
+        "Temizlik için alkol veya çözücü içeren ürünler kullanmayın."
+      ]
+    },
+    "termos": {
+      "kategori": "Mutfak",
+      "kisa_aciklama": "İçeceklerinizi saatlerce sıcak ya da soğuk tutan, sızdırmaz kapaklı çelik termos.",
+      "aciklama": [
+        "Bu çelik termos, çift duvarlı vakum yalıtımı sayesinde içeceklerinizi uzun süre ilk sıcaklığında tutar. Sabah doldurduğunuz çay öğleden sonra hâlâ sıcaktır; yaz günlerinde soğuk su ise akşama kadar serinliğini korur. Paslanmaz çelik iç yüzey koku ve tat bırakmaz, böylece farklı içecekleri aynı termosta gönül rahatlığıyla taşıyabilirsiniz. Dış yüzeydeki mat kaplama elde kaymayı önler ve parmak izini azaltır. Termosun gövdesi tek parça olarak üretildiği için zamanla birleşim yerlerinden su sızması ya da yalıtımın zayıflaması gibi sorunlar yaşanmaz.",
+        "Sızdırmaz kapak, termos çantanın içinde yatay dururken bile içeceğin dökülmesini engeller. Kapağın üst bölümü küçük bir bardak olarak kullanılabilir; dışarıda içeceğinizi paylaşmak bu sayede kolaylaşır. Geniş ağız yapısı buz küplerini rahatça eklemenize ve termosu kolayca temizlemenize olanak tanır. Yarım litrelik hacim gün boyu yetecek kadar içecek taşırken çantada fazla yer kaplamaz ve elinizi yormaz. Kapağın içindeki silikon conta kolayca çıkarılıp takılabilir; bu sayede termosun her parçasını ayrı ayrı temizleyerek hijyenik biçimde kullanabilirsiniz.",
+        "Termos, okul, iş ve doğa yürüyüşleri için uygun, dayanıklı bir gövdeye sahiptir. Darbelere karşı güçlendirilmiş taban, masaya konduğunda sağlam durur ve küçük düşmelerde gövdeyi korur. Sade tasarımı her yaştan kullanıcıya hitap eder. Gıdayla temasa uygun malzemelerden üretilmiştir ve içeriğinde zararlı kimyasallar bulunmaz. Uzun ömürlü yapısıyla tek kullanımlık şişelere çevreye duyarlı bir alternatif sunar. Standart araç bardaklıklarına rahatça sığan gövde çapı sayesinde termosu uzun yolculuklarda da yanınızda kolayca taşıyabilir ve sürüş sırasında güvenle kullanabilirsiniz."
+      ],
+      "ozellikler": [
+        [
+          "Hacim",
+          "500 ml"
+        ],
+        [
+          "Malzeme",
+          "Paslanmaz çelik"
+        ],
+        [
+          "Yalıtım",
+          "Çift duvarlı vakum"
+        ],
+        [
+          "Sıcak tutma",
+          "Yaklaşık 12 saat"
+        ],
+        [
+          "Soğuk tutma",
+          "Yaklaşık 24 saat"
+        ],
+        [
+          "Ağırlık",
+          "380 g"
+        ],
+        [
+          "Yükseklik",
+          "24 cm"
+        ],
+        [
+          "Kapak",
+          "Sızdırmaz, bardak olarak kullanılabilir"
+        ]
+      ],
+      "bakim": [
+        "İlk kullanımdan önce ılık sabunlu suyla yıkayın.",
+        "Gövdeyi bulaşık makinesine koymayın; elde yıkayın.",
+        "İçini uzun saplı bir fırçayla temizleyin.",
+        "Kapağın contasını ayda bir çıkarıp ayrıca yıkayın.",
+        "Kullanmadığınız zamanlarda kapağı açık bırakarak kurutun."
+      ]
+    },
+    "sirt_cantasi": {
+      "kategori": "Çanta",
+      "kisa_aciklama": "Dizüstü bilgisayar bölmesi ve düzenli iç cepleriyle günlük kullanıma uygun hafif sırt çantası.",
+      "aciklama": [
+        "Bu sırt çantası, okul ve iş hayatının günlük temposu düşünülerek tasarlanmıştır. Ana bölmede on beş inçe kadar dizüstü bilgisayarlar için dolgulu, ayrı bir bölüm bulunur. Ön cepteki küçük bölmeler kalem, şarj kablosu ve anahtar gibi eşyaları düzenli tutar. Böylece aradığınızı çantanın dibinde kaybolmadan, kısa sürede bulabilirsiniz. Yan cepler su şişesi ya da şemsiye taşımak için uygundur ve kullanılmadığında düz kalır. Ana bölmenin geniş açılan fermuarı, çantanın içini tamamen görmenizi sağlar ve kitap ya da dosya gibi büyük eşyaları yerleştirmeyi kolaylaştırır.",
+        "Sırt bölümündeki nefes alan dolgu, sıcak günlerde terlemeyi azaltır ve yükü sırta eşit biçimde dağıtır. Ayarlanabilir omuz askıları farklı boylara uyum sağlar; göğüs kayışı ağır yüklerde çantanın sallanmasını önler. Çanta boşken oldukça hafiftir, bu yüzden uzun yürüyüşlerde ve toplu taşımada omuzlarınızı yormaz. Arka yüzdeki gizli cep, telefon ve cüzdan gibi değerli eşyalar için ek güvenlik sunar. Askıların altındaki küçük halkalar, kulaklık kablosu ya da anahtarlık gibi küçük eşyaları elinizin altında tutmanız için ek bir bağlantı noktası sunar.",
+        "Dış kumaş suya dayanıklıdır ve hafif yağmurda içindekileri korur. Fermuarlar sağlam ve akıcıdır; kalın kumaş kenarları sık kullanımda bile kolay yıpranmaz. Sade renkleri ve düz çizgileriyle hem resmî hem gündelik kıyafetlerle uyum sağlar. Bavul kollarına takılabilen arka kayışı sayesinde yolculuklarda da pratik bir yardımcıdır. Uzun yıllar boyunca güvenle kullanabileceğiniz, düzenli ve dayanıklı bir çantadır. Çantanın tabanındaki güçlendirilmiş katman, ıslak zemine bırakıldığında bile içindeki eşyaları korur."
+      ],
+      "ozellikler": [
+        [
+          "Hacim",
+          "22 litre"
+        ],
+        [
+          "Bilgisayar bölmesi",
+          "15 inçe kadar"
+        ],
+        [
+          "Malzeme",
+          "Suya dayanıklı polyester"
+        ],
+        [
+          "Ağırlık",
+          "720 g"
+        ],
+        [
+          "Boyutlar",
+          "45 × 30 × 16 cm"
+        ],
+        [
+          "Cep sayısı",
+          "7"
+        ],
+        [
+          "Askılar",
+          "Dolgulu, ayarlanabilir"
+        ],
+        [
+          "Ek özellik",
+          "Bavul kayışı ve gizli cep"
+        ]
+      ],
+      "bakim": [
+        "Lekeleri nemli bir bez ve az miktarda sabunla silin.",
+        "Çantayı çamaşır makinesinde yıkamayın.",
+        "Islandığında içini boşaltıp gölgede kurumaya bırakın.",
+        "Fermuarları zorlamadan, kumaşı sıkıştırmadan kapatın.",
+        "Uzun süre kullanmayacaksanız içini doldurarak biçimini koruyun."
+      ]
+    },
+    "masa_lambasi": {
+      "kategori": "Aydınlatma",
+      "kisa_aciklama": "Ayarlanabilir kolu ve kademeli parlaklığıyla çalışma masanızı göz yormadan aydınlatan masa lambası.",
+      "aciklama": [
+        "Bu masa lambası, uzun çalışma ve okuma saatlerinde gözlerinizi yormayan dengeli bir ışık sunar. Titreşimsiz ışık kaynağı, ekran başında ya da kitap okurken oluşan göz yorgunluğunu azaltmaya yardımcı olur. Eklemli kolu ve dönebilen başlığı sayesinde ışığı tam ihtiyaç duyduğunuz noktaya yöneltebilirsiniz. Ağırlıklı taban, kol uzatıldığında bile lambanın devrilmesini önler ve masada sağlam durur. Başlığın iç yüzeyindeki yumuşak dağıtıcı, ışığın doğrudan gözünüze gelmesini engeller ve masanın tamamına eşit, gölgesiz bir aydınlatma yayar.",
+        "Dokunmatik düğme ile beş farklı parlaklık düzeyi arasında kolayca geçiş yapabilirsiniz. Üç renk sıcaklığı seçeneği, sabah çalışmalarında canlı bir beyaz ışık, akşam saatlerinde ise sıcak ve dinlendirici bir ton sağlar. Lamba, en son kullandığınız ayarı hatırlar; her açışta yeniden ayar yapmanız gerekmez. Otomatik kapanma zamanlayıcısı, lambayı açık unuttuğunuz akşamlarda enerji tasarrufu sağlar. Düğmeye uzun süre bastığınızda parlaklık kesintisiz olarak artar ya da azalır; böylece ışığı tam istediğiniz düzeye hassas biçimde getirebilir ve gözünüzü rahatlatabilirsiniz.",
+        "Düşük enerji tüketen ışık kaynağı uzun ömürlüdür ve yıllarca değiştirme gerektirmez. Tabandaki şarj girişi, telefonunuzu lamba çalışırken şarj etmenize olanak tanır. İnce ve sade gövdesi küçük masalarda bile fazla yer kaplamaz. Öğrenci odaları, ev ofisleri ve yatak başı kullanımı için uygun, pratik bir aydınlatma çözümüdür. Kutudan çıktığı gibi, ek bir kurulum gerektirmeden hemen kullanılabilir. Katlandığında oldukça küçük bir alan kaplayan lamba, taşınma ya da masa düzenlemesi sırasında kolayca kaldırılıp başka bir yere yerleştirilebilir."
+      ],
+      "ozellikler": [
+        [
+          "Parlaklık düzeyi",
+          "5 kademe"
+        ],
+        [
+          "Renk sıcaklığı",
+          "3 seçenek"
+        ],
+        [
+          "Güç tüketimi",
+          "8 W"
+        ],
+        [
+          "Kol",
+          "Eklemli, ayarlanabilir"
+        ],
+        [
+          "Kontrol",
+          "Dokunmatik düğme"
+        ],
+        [
+          "Zamanlayıcı",
+          "60 dakika otomatik kapanma"
+        ],
+        [
+          "Ek özellik",
+          "Tabanda şarj girişi"
+        ],
+        [
+          "Ağırlık",
+          "950 g"
+        ]
+      ],
+      "bakim": [
+        "Temizlemeden önce lambanın fişini çekin.",
+        "Gövdeyi kuru ve yumuşak bir bezle silin.",
+        "Kolu eklem yerlerinden zorlayarak bükmeyin.",
+        "Lambayı nemli ortamlarda kullanmayın.",
+        "Işık kaynağına sıvı temizleyici püskürtmeyin."
+      ]
+    },
+    "kupa": {
+      "kategori": "Mutfak",
+      "kisa_aciklama": "Günlük kahve ve çay keyfi için tasarlanmış, dört parçalı sade seramik kupa seti.",
+      "aciklama": [
+        "Bu seramik kupa seti, sabah kahvesinden akşam çayına kadar her içecek için uygun dört kupadan oluşur. Kalın cidarlı yapısı içeceğin sıcaklığını korurken dış yüzeyin aşırı ısınmasını önler. Geniş ve rahat kulpu, kupayı tutarken parmaklarınızı sıkıştırmaz. Kupalar üst üste dizilebilir; böylece dolapta az yer kaplar ve mutfağınız düzenli görünür. Her kupa yaklaşık üç yüz elli mililitre içecek alır. Kupaların ağız kenarı yuvarlatılmıştır; içerken dudaklarınıza hoş bir his verir ve kenarlarda çatlak ya da kırılma oluşma ihtimalini azaltır.",
+        "Sırlı iç yüzey leke tutmaz ve kahve ya da çay izlerini kolayca bırakır. Kupalar bulaşık makinesinde yıkanabilir ve mikrodalga fırında güvenle kullanılabilir. Pürüzsüz taban, masa yüzeyini çizmez ve kupanın sallanmadan durmasını sağlar. Gıdayla temasa uygun sırlar kullanılmıştır; içeriğinde kurşun ve kadmiyum bulunmaz. Yüksek sıcaklıkta pişirilen seramik gövde, günlük kullanımda kolay kolay çatlamaz. Her kupa üretim sırasında tek tek kontrol edilir; sırda kabarcık, renk farkı ya da yüzeyde pürüz bulunan parçalar sete eklenmez.",
+        "Sade renkleri ve yumuşak hatlarıyla set, farklı sofra düzenlerine kolayca uyum sağlar. Misafir ağırlarken ya da ofiste ekip arkadaşlarınızla kullanırken bütünlüklü bir görünüm sunar. Özenli paketlemesi sayesinde hediye olarak da gönül rahatlığıyla verilebilir. Uzun yıllar boyunca ilk günkü görünümünü koruyan, günlük alışkanlıklarınıza eşlik edecek dayanıklı ve kullanışlı bir settir. Kupalar sıcak çikolata, çorba ya da yoğurt gibi farklı yiyecek ve içecekler için de rahatlıkla kullanılabilir; böylece mutfakta çok amaçlı bir yardımcı olur."
+      ],
+      "ozellikler": [
+        [
+          "Parça sayısı",
+          "4 kupa"
+        ],
+        [
+          "Hacim",
+          "350 ml"
+        ],
+        [
+          "Malzeme",
+          "Sırlı seramik"
+        ],
+        [
+          "Yükseklik",
+          "10 cm"
+        ],
+        [
+          "Ağız çapı",
+          "8,5 cm"
+        ],
+        [
+          "Bulaşık makinesi",
+          "Uygun"
+        ],
+        [
+          "Mikrodalga",
+          "Uygun"
+        ],
+        [
+          "Ağırlık",
+          "Kupa başına 320 g"
+        ]
+      ],
+      "bakim": [
+        "İlk kullanımdan önce kupaları sıcak suyla yıkayın.",
+        "Ani sıcaklık değişimlerinden kaçının.",
+        "Ocak üstünde veya doğrudan ateşte ısıtmayın.",
+        "Aşındırıcı süngerler yerine yumuşak süngerler kullanın.",
+        "Kupaları üst üste dizerken aralarına kâğıt peçete koyabilirsiniz."
+      ]
+    },
+    "mouse": {
+      "kategori": "Elektronik",
+      "kisa_aciklama": "Sessiz tuşları ve ele oturan gövdesiyle bilgisayar başında rahat çalışma sağlayan kablosuz mouse.",
+      "aciklama": [
+        "Bu kablosuz mouse, uzun çalışma saatlerinde elinizi yormayacak şekilde biçimlendirilmiş bir gövdeye sahiptir. Hafif kavisli yapısı avucunuza doğal biçimde oturur ve bileğinizin rahat bir açıda kalmasına yardımcı olur. Yan yüzeylerdeki yumuşak dokulu kaplama kaymayı önler ve hassas hareketleri kolaylaştırır. Hem sağ hem sol elle kullanılabilecek simetrik tasarımı, evde farklı kişilerin ortak kullanımına uygundur. Avuç içine gelen bölümdeki hafif yükselti, eli doğal bir duruşta destekler ve gün sonunda bilekte hissedilen yorgunluğu belirgin biçimde azaltmaya yardımcı olur.",
+        "Sessiz tuşları, kütüphane ve ortak ofis gibi sessizlik gereken ortamlarda çevrenizdekileri rahatsız etmez. Ayarlanabilir hassasiyet düğmesiyle imleç hızını yaptığınız işe göre üç kademede değiştirebilirsiniz. Küçük kablosuz alıcı bilgisayara takıldığı anda çalışır; ek bir kurulum gerektirmez. Kullanılmadığında alıcı, mouse gövdesindeki özel yuvaya yerleştirilerek kaybolmaktan korunur. Tuşların basma direnci özenle ayarlanmıştır; yanlışlıkla tıklamaları önleyecek kadar sağlam, uzun süreli kullanımda parmakları yormayacak kadar da hafiftir. Gövdenin altındaki açma kapama düğmesi, mouse'u çantaya koyarken pil tüketimini tamamen durdurmanızı sağlar.",
+        "Tek bir pille aylarca kullanılabilir; enerji tasarrufu modu, mouse bir süre hareketsiz kaldığında devreye girer. Optik algılayıcı, masa ve kumaş gibi farklı yüzeylerde akıcı ve doğru bir hareket sunar. Kaydırma tekerleği belgeler ve web sayfaları arasında rahatça gezinmenizi sağlar. İnce yapısı sayesinde dizüstü bilgisayar çantasının ön cebine kolayca sığar ve yolculuklarda pratik bir yardımcıdır. Bilgisayarlarla geniş uyumluluğu sayesinde farklı işletim sistemlerinde ek sürücü yüklemeye gerek kalmadan hemen çalışır."
+      ],
+      "ozellikler": [
+        [
+          "Bağlantı",
+          "Kablosuz alıcı"
+        ],
+        [
+          "Hassasiyet",
+          "800 / 1200 / 1600 DPI"
+        ],
+        [
+          "Tuş sayısı",
+          "3"
+        ],
+        [
+          "Pil",
+          "1 adet AA"
+        ],
+        [
+          "Pil ömrü",
+          "Yaklaşık 12 ay"
+        ],
+        [
+          "Kapsama",
+          "10 metreye kadar"
+        ],
+        [
+          "Ağırlık",
+          "75 g (pilsiz)"
+        ],
+        [
+          "Kullanım",
+          "Sağ ve sol el"
+        ]
+      ],
+      "bakim": [
+        "Mouse'u yumuşak, hafif nemli bir bezle temizleyin.",
+        "Optik algılayıcıyı toz ve kirden uzak tutun.",
+        "Uzun süre kullanmayacaksanız pilini çıkarın.",
+        "Alıcıyı kaybetmemek için gövdedeki yuvasında saklayın.",
+        "Mouse'u sıvılara ve aşırı sıcağa maruz bırakmayın."
+      ]
+    },
+    "defter": {
+      "kategori": "Kırtasiye",
+      "kisa_aciklama": "Kalın kâğıtlı sayfaları ve sağlam kapağıyla not almayı keyifli hâle getiren üçlü defter seti.",
+      "aciklama": [
+        "Bu defter seti, ders notlarından toplantı özetlerine kadar her türlü yazı için uygun üç defterden oluşur. Defterlerden biri çizgili, biri kareli, biri ise noktalı sayfalara sahiptir; böylece yazı, hesap ve çizim için ayrı bir defteriniz olur. Kalın kâğıt, mürekkepli kalemlerde bile arka sayfaya geçiş yapmaz. Sayfalar kolayca açılır ve yazarken defteri elinizle bastırmanıza gerek kalmaz. Sayfa kenarlarındaki ince tarih ve başlık alanları, notlarınızı düzenli tutmanıza ve daha sonra aradığınız bilgiye hızla ulaşmanıza yardımcı olur.",
+        "Sağlam karton kapaklar, defterleri çantada taşırken köşe kıvrılmalarına ve yıpranmaya karşı korur. Her defterin sonunda ayrılabilir sayfalar ve küçük bir cep bulunur; ayrı kâğıtları ve kartları burada saklayabilirsiniz. Lastik bant, defteri kapalı tutar ve araya koyduğunuz notların düşmesini engeller. Kurdele ayraç sayesinde kaldığınız sayfayı kolayca bulabilir, yazmaya hızla devam edebilirsiniz. Dikiş ciltli sırt yapısı sayesinde sayfalar zamanla gevşemez ve defter sık kullanılsa bile dağılmadan uzun süre ilk günkü sağlamlığını korur.",
+        "Kâğıtlar asitsizdir ve yıllar geçse de sararmaz. Sade kapak tasarımı ofiste, okulda ve evde rahatça kullanılabilir; dilerseniz kapakları etiketlerle kişiselleştirebilirsiniz. Orta boyu, hem çantada fazla yer kaplamaz hem de rahatça yazmanıza yetecek genişlikte bir alan sunar. Düzenli not tutmak, plan yapmak ve fikirlerinizi bir arada saklamak isteyenler için kullanışlı ve dayanıklı bir settir. Kurşun kalem, tükenmez kalem ve ince uçlu keçeli kalemlerle rahatça kullanılabilen kâğıt yüzeyi, yazınızın düzgün ve okunaklı görünmesine katkı sağlar."
+      ],
+      "ozellikler": [
+        [
+          "Parça sayısı",
+          "3 defter"
+        ],
+        [
+          "Sayfa düzeni",
+          "Çizgili, kareli, noktalı"
+        ],
+        [
+          "Sayfa sayısı",
+          "Defter başına 96"
+        ],
+        [
+          "Kâğıt",
+          "100 g/m², asitsiz"
+        ],
+        [
+          "Boyut",
+          "A5 (14,8 × 21 cm)"
+        ],
+        [
+          "Kapak",
+          "Sert karton"
+        ],
+        [
+          "Ek özellik",
+          "Lastik bant, ayraç, arka cep"
+        ],
+        [
+          "Ağırlık",
+          "Defter başına 280 g"
+        ]
+      ],
+      "bakim": [
+        "Defterleri doğrudan güneş ışığından uzak saklayın.",
+        "Kapakları nemli ortamlarda bırakmayın.",
+        "Lastik bandı aşırı gererek kullanmayın.",
+        "Ayrılabilir sayfaları perforasyon çizgisinden yavaşça koparın.",
+        "Kapak lekelerini kuru bir bezle silin."
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <!-- Mobilde yakınlaştırma kapalı: çift dokunma yakınlaştırması ve dokunma gecikmesi olmasın. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <!-- İçerik güvenlik politikası: kaynaklar yalnızca sitenin kendisinden; bağlantılar
+       yalnızca site ve Supabase proje adresi. Yayın iş akışı Supabase adresini
+       site/yapilandirma/supabase.js'teki değerle değiştirir. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' http://127.0.0.1:54321; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Alışveriş deneyi</title>
+  <link rel="preload" href="fontlar/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fontlar/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/temel.css">
+  <link rel="stylesheet" href="css/magaza.css">
+  <script type="module" src="js/uygulama.js"></script>
+</head>
+<body>
+  <!-- Bütün ekranlar bu kabın içinde, sayfa yenilenmeden değişir. -->
+  <main id="sahne" class="sahne" aria-live="polite">
+    <p class="yukleniyor">Yükleniyor…</p>
+  </main>
+  <noscript><p class="akis-kart">Bu deney için JavaScript gereklidir.</p></noscript>
+</body>
+</html>

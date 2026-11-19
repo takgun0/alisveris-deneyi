@@ -1,0 +1,164 @@
+{
+  "aciklama": "Deneyin tek yapılandırma kaynağı. 'williams' bölümü scriptler/williams.mjs tarafından üretilir; elle düzenlemeyin.",
+  "renkler": {
+    "zemin": "#F3F6F9",
+    "yuzey": "#FFFFFF",
+    "metin": "#102A43",
+    "buton_yazi": "#102A43",
+    "vurgu_notr": "#D6E4F0",
+    "turuncu": "#E8781E",
+    "buton": {
+      "R0": "#C8CDD4",
+      "R1": "#BCD6EA",
+      "R2": "#E8781E",
+      "R3": "#E8781E"
+    },
+    "vurgu": {
+      "R0": "#D6E4F0",
+      "R1": "#D6E4F0",
+      "R2": "#D6E4F0",
+      "R3": "#E8781E"
+    }
+  },
+  "kontrast_hedefleri": {
+    "R1_yuzey_min": 1.4,
+    "R1_yuzey_max": 1.6,
+    "R2_yuzey_min": 2.9,
+    "buton_yazi_min": 4.5
+  },
+  "kosullar": [
+    {
+      "indeks": 0,
+      "kod": "K1R1",
+      "konum": "K1",
+      "renk": "R1"
+    },
+    {
+      "indeks": 1,
+      "kod": "K1R2",
+      "konum": "K1",
+      "renk": "R2"
+    },
+    {
+      "indeks": 2,
+      "kod": "K1R3",
+      "konum": "K1",
+      "renk": "R3"
+    },
+    {
+      "indeks": 3,
+      "kod": "K2R1",
+      "konum": "K2",
+      "renk": "R1"
+    },
+    {
+      "indeks": 4,
+      "kod": "K2R2",
+      "konum": "K2",
+      "renk": "R2"
+    },
+    {
+      "indeks": 5,
+      "kod": "K2R3",
+      "konum": "K2",
+      "renk": "R3"
+    }
+  ],
+  "alistirma_kosulu": {
+    "indeks": null,
+    "kod": "K1R0",
+    "konum": "K1",
+    "renk": "R0"
+  },
+  "urunler": [
+    {
+      "kod": "kulaklik",
+      "ad": "Kablosuz Kulaklık",
+      "fiyat_tl": 849
+    },
+    {
+      "kod": "termos",
+      "ad": "Çelik Termos",
+      "fiyat_tl": 799
+    },
+    {
+      "kod": "sirt_cantasi",
+      "ad": "Sırt Çantası",
+      "fiyat_tl": 899
+    },
+    {
+      "kod": "masa_lambasi",
+      "ad": "Masa Lambası",
+      "fiyat_tl": 829
+    },
+    {
+      "kod": "kupa",
+      "ad": "Seramik Kupa Seti",
+      "fiyat_tl": 749
+    },
+    {
+      "kod": "mouse",
+      "ad": "Kablosuz Mouse",
+      "fiyat_tl": 779
+    }
+  ],
+  "alistirma_urunu": {
+    "kod": "defter",
+    "ad": "Defter Seti",
+    "fiyat_tl": 789
+  },
+  "olcum": {
+    "deneme_sure_siniri_ms": 60000,
+    "fare_ornek_araligi_ms": 50,
+    "kaydirma_ornek_araligi_ms": 100,
+    "buton_gorunurluk_esigi": 0.5,
+    "deneme_maks_olay": 6000,
+    "deneme_maks_bayt": 2097152,
+    "keepalive_maks_bayt": 60000,
+    "masaustu_min_pencere_genisligi": 1024,
+    "tablet_min_kisa_kenar": 600,
+    "sira_bosalma_dakika": 30
+  },
+  "sayfalar": [
+    "gorev",
+    "urun",
+    "eklendi",
+    "zorluk"
+  ],
+  "olay_turleri": [
+    "sayfa_goruntulendi",
+    "buton_gorundu",
+    "buton_hover_ilk",
+    "tiklama",
+    "basis_iptal",
+    "sekme_degisti",
+    "yon_degisti",
+    "boyut_degisti",
+    "duraklatildi",
+    "devam_edildi",
+    "vazgecildi",
+    "zaman_asimi",
+    "gorev_tamamlandi"
+  ],
+  "iz_turleri": [
+    "fare",
+    "kaydirma"
+  ],
+  "sonuclar": [
+    "basarili",
+    "vazgecildi",
+    "zaman_asimi",
+    "kesildi"
+  ],
+  "williams": {
+    "temel_satir": [0, 1, 5, 2, 4, 3],
+    "diziler": [
+      [0, 1, 5, 2, 4, 3],
+      [1, 2, 0, 3, 5, 4],
+      [2, 3, 1, 4, 0, 5],
+      [3, 4, 2, 5, 1, 0],
+      [4, 5, 3, 0, 2, 1],
+      [5, 0, 4, 1, 3, 2]
+    ]
+  }
+}

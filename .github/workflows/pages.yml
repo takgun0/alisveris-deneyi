@@ -1,0 +1,71 @@
+# GitHub Pages yayını.
+#
+# main dalına her gönderimde (veya elle "Run workflow" ile):
+#   1. kontrast denetimi ve birim testleri,
+#   2. site/ → _site/ kopyası; sürüm damgası, önbellek parametreleri ve CSP
+#      connect-src (scriptler/surum_damgala.mjs). supabase.js yerel adresi
+#      gösteriyorsa veya gizli anahtar izi varsa yayın DURUR,
+#   3. _site/ GitHub Pages'e yüklenir ve yayınlanır.
+#
+# Depo ayarı: Settings > Pages > Build and deployment > Source = "GitHub Actions".
+# Eylem sürümleri GitHub belgesinden alınmıştır:
+# https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+
+name: Siteyi yayınla
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Aynı anda tek yayın; süren yayın yarıda kesilmez.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  derle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      # Bağımlılık gerekmez: kontrast ve birim testleri yalnızca Node'un kendi modüllerini kullanır.
+      - name: Kontrast denetimi
+        run: npm run kontrast
+
+      - name: Birim testleri
+        run: npm run test:birim
+
+      # Canlı adres ve yayınlanabilir anahtar depoda değil, depo sırlarındadır
+      # (Settings > Secrets and variables > Actions); yalnızca _site/ kopyasına yazılır.
+      - name: Sürüm damgası, Supabase bağlantısı ve CSP
+        env:
+          SUPABASE_ADRESI: ${{ secrets.SUPABASE_ADRESI }}
+          SUPABASE_YAYINLANABILIR_ANAHTAR: ${{ secrets.SUPABASE_YAYINLANABILIR_ANAHTAR }}
+        run: node scriptler/surum_damgala.mjs
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  yayinla:
+    needs: derle
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.yayin.outputs.page_url }}
+    steps:
+      - id: yayin
+        uses: actions/deploy-pages@v4

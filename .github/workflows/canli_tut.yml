@@ -1,0 +1,37 @@
+# Supabase projesini uyanık tutar.
+#
+# Ücretsiz plandaki proje, bir hafta boyunca yeterli veritabanı etkinliği
+# görmezse duraklatılır; günde birkaç istek yeterlidir
+# (https://supabase.com/docs/guides/platform/free-project-pausing).
+# Bu iş günde iki kez public.canli_tut() fonksiyonunu yayınlanabilir anahtarla
+# çağırır. Fonksiyon hiçbir tabloya dokunmaz, yalnızca true döndürür.
+#
+# Adres ve anahtar depo sırlarından gelir; günlükte maskelenir.
+# Not: GitHub, 60 gün boyunca hiç commit almayan açık depolarda zamanlanmış
+# işleri kendiliğinden kapatır. Kapanırsa Actions sekmesinden yeniden açın.
+
+name: Supabase'i uyanık tut
+
+on:
+  schedule:
+    - cron: '17 5,17 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  cagir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: canli_tut çağrısı
+        env:
+          SUPABASE_ADRESI: ${{ secrets.SUPABASE_ADRESI }}
+          SUPABASE_YAYINLANABILIR_ANAHTAR: ${{ secrets.SUPABASE_YAYINLANABILIR_ANAHTAR }}
+        run: |
+          yanit=$(curl -sS --fail-with-body --retry 3 --retry-delay 20 -X POST \
+            "$SUPABASE_ADRESI/rest/v1/rpc/canli_tut" \
+            -H "apikey: $SUPABASE_YAYINLANABILIR_ANAHTAR" \
+            -H "Content-Type: application/json" -d '{}')
+          echo "Yanıt: $yanit"
+          test "$yanit" = "true"

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' http://127.0.0.1:54321; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Yönetim paneli — Sepete Ekle deneyi</title>
+  <link rel="preload" href="../fontlar/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/yonetim.css">
+  <!-- Depodaki kütüphaneler (harici CDN yok) -->
+  <script src="../kutuphaneler/supabase-2.118.0.umd.js" defer></script>
+  <script src="../kutuphaneler/chart-4.6.1.umd.min.js" defer></script>
+  <script type="module" src="../js/yonetim/panel.js"></script>
+</head>
+<body>
+  <header class="ust">
+    <h1>Sepete Ekle deneyi · Yönetim paneli</h1>
+    <div id="ust-durum" class="ust-durum"></div>
+  </header>
+  <main id="icerik" class="icerik">
+    <p class="yukleniyor">Yükleniyor…</p>
+  </main>
+</body>
+</html>
