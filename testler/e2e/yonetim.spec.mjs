@@ -27,6 +27,22 @@ test('hatalı parola reddedilir', async ({ page }) => {
   await expect(page.getByRole('alert')).toHaveText('Kullanıcı adı veya parola hatalı.');
 });
 
+test('5 hatalı denemeden sonra giriş kilitlenir; yenilemede kilit sürer', async ({ page }) => {
+  await page.goto('/admin/');
+  const dugme = page.getByRole('button', { name: 'Giriş yap' });
+  for (let i = 1; i <= 5; i++) {
+    await page.getByLabel('Kullanıcı adı').fill(YONETICI_EPOSTA);
+    await page.getByLabel('Parola').fill(`yanlis-${i}`);
+    await dugme.click();
+    await expect(page.getByRole('alert')).not.toHaveText('');
+  }
+  await expect(page.getByRole('alert')).toContainText('Çok fazla hatalı deneme.');
+  await expect(dugme).toBeDisabled();
+  await page.reload();
+  await expect(page.getByRole('alert')).toContainText('Çok fazla hatalı deneme.');
+  await expect(page.getByRole('button', { name: 'Giriş yap' })).toBeDisabled();
+});
+
 test('kurala göre toplu hariç tutma, geri alma ve işlem kaydı', async ({ page, request }) => {
   await giris(page);
   await page.getByRole('tab', { name: 'Denemeler ve temizleme' }).click();

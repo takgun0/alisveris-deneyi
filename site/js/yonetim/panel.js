@@ -14,6 +14,7 @@ import { el, secim, bildir } from './arayuz.js';
 import { BOS_FILTRE, filtrele, katilimcilar, veri_imzasi, YAS_GRUPLARI, ETIKETLER } from './veri.js';
 import { grafikleri_temizle } from './grafikler.js';
 import { hepsini_oku_tablo } from './sunucu.js';
+import { yeni_durum, hatali_deneme, kalan_kilit, sure_metni } from './giris_siniri.js';
 import { ozet_sekmesi_ciz } from './ozet_sekmesi.js';
 import { analiz_sekmesi_ciz } from './analiz_sekmesi.js';
 import { denemeler_sekmesi_ciz } from './denemeler_sekmesi.js';
@@ -87,6 +88,18 @@ export function giris_adresi(girdi) {
   return temiz.includes('@') ? temiz : temiz.toLowerCase() + KULLANICI_ADI_UZANTISI;
 }
 
+// Deneme freni durumu bu tarayıcıda saklanır (giris_siniri.js).
+const GIRIS_SINIRI_ANAHTARI = 'sepete_ekle_yonetim_giris_siniri_v1';
+function giris_siniri_oku() {
+  try { return JSON.parse(localStorage.getItem(GIRIS_SINIRI_ANAHTARI)) ?? yeni_durum(); } catch { return yeni_durum(); }
+}
+function giris_siniri_yaz(d) {
+  try { localStorage.setItem(GIRIS_SINIRI_ANAHTARI, JSON.stringify(d)); } catch { /* depolama kapalı */ }
+}
+function giris_siniri_sil() {
+  try { localStorage.removeItem(GIRIS_SINIRI_ANAHTARI); } catch { /* depolama kapalı */ }
+}
+
 function giris_goster(mesaj = '') {
   ust_durum.replaceChildren();
   const eposta = el('input', { type: 'text', name: 'eposta', autocomplete: 'username', autocapitalize: 'none', spellcheck: 'false', required: true });
@@ -99,21 +112,54 @@ function giris_goster(mesaj = '') {
     el('label', { class: 'alan' }, 'Kullanıcı adı', eposta),
     el('label', { class: 'alan' }, 'Parola', parola),
     hata, dugme);
+  // Kilit sürerken düğme kapalı kalır ve kalan süre gösterilir.
+  let kilit_sayaci = null;
+  function kilidi_goster() {
+    clearInterval(kilit_sayaci);
+    const guncelle = () => {
+      const kalan = kalan_kilit(giris_siniri_oku(), Date.now());
+      dugme.disabled = kalan > 0;
+      if (kalan > 0) {
+        hata.textContent = `Çok fazla hatalı deneme. ${sure_metni(kalan)} sonra tekrar deneyin.`;
+      } else {
+        clearInterval(kilit_sayaci);
+        if (hata.textContent.startsWith('Çok fazla')) hata.textContent = '';
+      }
+    };
+    guncelle();
+    kilit_sayaci = setInterval(guncelle, 1000);
+  }
+
   form.addEventListener('submit', async (o) => {
     o.preventDefault();
+    if (kalan_kilit(giris_siniri_oku(), Date.now()) > 0) { kilidi_goster(); return; }
     if (!eposta.value || !parola.value) { hata.textContent = 'Kullanıcı adı ve parola gerekli.'; return; }
     dugme.disabled = true;
     hata.textContent = '';
     const { data, error } = await durum.istemci.auth.signInWithPassword({ email: giris_adresi(eposta.value), password: parola.value });
     dugme.disabled = false;
     if (error) {
-      hata.textContent = error.status === 400 || error.code === 'invalid_credentials'
-        ? 'Kullanıcı adı veya parola hatalı.'
-        : 'Giriş yapılamadı. Bağlantıyı kontrol edip tekrar deneyin.';
+      if (error.status === 429) {
+        // Supabase'in sunucu tarafı sınırı (IP başına).
+        hata.textContent = 'Çok fazla giriş denemesi yapıldı. Birkaç dakika sonra tekrar deneyin.';
+        return;
+      }
+      if (error.status === 400 || error.code === 'invalid_credentials') {
+        const yeni = hatali_deneme(giris_siniri_oku(), Date.now());
+        giris_siniri_yaz(yeni);
+        parola.value = '';
+        hata.textContent = 'Kullanıcı adı veya parola hatalı.';
+        if (kalan_kilit(yeni, Date.now()) > 0) kilidi_goster();
+        return;
+      }
+      hata.textContent = 'Giriş yapılamadı. Bağlantıyı kontrol edip tekrar deneyin.';
       return;
     }
+    giris_siniri_sil();
+    clearInterval(kilit_sayaci);
     await oturum_acildi(data.user);
   });
+  if (kalan_kilit(giris_siniri_oku(), Date.now()) > 0) kilidi_goster();
   icerik.replaceChildren(form);
   eposta.focus();
 }
