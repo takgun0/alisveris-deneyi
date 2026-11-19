@@ -115,3 +115,11 @@ test('dışa aktarma: CSV (BOM, CRLF) ve xlsx; işlem kaydına yazılır', async
   const aktarimlar = kayit.filter((i) => i.islem === 'disa_aktar' && i.etkilenen.tur === 'deneme_ozetleri');
   expect(aktarimlar.map((i) => i.etkilenen.bicim).sort()).toEqual(['csv', 'xlsx']);
 });
+
+test('panel başka bir sayfanın çerçevesi içinde başlamaz', async ({ page }) => {
+  await page.route('**/e2e-cerceve.html', (r) => r.fulfill({ contentType: 'text/html', body: '<iframe src="/admin/" width="800" height="600"></iframe>' }));
+  await page.goto('/e2e-cerceve.html');
+  const cerceve = page.frameLocator('iframe');
+  await expect(cerceve.getByText('Yönetim paneli başka bir sayfanın içinde açılamaz.')).toBeVisible();
+  await expect(cerceve.getByLabel('Parola')).toHaveCount(0);
+});

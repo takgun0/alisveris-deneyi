@@ -345,7 +345,14 @@ function durum_cubugunu_ciz(hata = null) {
   ].filter(Boolean));
 }
 
-baslat().catch((hata) => {
+// Tıklama korsanlığına (clickjacking) karşı: GitHub Pages X-Frame-Options
+// başlığı gönderemez ve <meta> CSP'de frame-ancestors çalışmaz. Bu yüzden
+// panel başka bir sitenin çerçevesi (iframe) içinde açılırsa hiç başlamaz.
+let cerceve_icinde;
+try { cerceve_icinde = window.top !== window.self; } catch { cerceve_icinde = true; }
+if (cerceve_icinde) {
+  icerik.replaceChildren(el('p', { class: 'hata-metni' }, 'Yönetim paneli başka bir sayfanın içinde açılamaz.'));
+} else baslat().catch((hata) => {
   console.error(hata);
   icerik.replaceChildren(el('p', { class: 'hata-metni' }, 'Panel yüklenemedi. Sayfayı yenileyin; sorun sürerse yapılandırmayı (yapilandirma/supabase.js) kontrol edin.'));
 });
