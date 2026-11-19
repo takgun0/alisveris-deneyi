@@ -101,7 +101,7 @@ Yayınlanabilir anahtar yine de yayınlanan sitede görünür; tarayıcının ve
 
 ### 2.4 Yönetici ekleme
 
-1. **Authentication > Users** sayfasından yöneticinin hesabını ekleyin (e-posta ve parola).
+1. **Authentication > Users > Add user** ile yöneticinin hesabını ekleyin. Gerçek e-posta gerekmez: `kullaniciadi@deney.local` biçiminde bir adres yazıp **Auto Confirm User** kutusunu işaretleyin. Panelde yalnızca `kullaniciadi` ile giriş yapılır (`@deney.local` uzantısını panel ekler).
 2. **SQL Editor**'de çalıştırın:
    ```sql
    insert into public.yoneticiler (kullanici_id, eposta)

@@ -9,7 +9,7 @@ test.use({ viewport: { width: 1400, height: 900 } });
 
 async function giris(page) {
   await page.goto('/admin/');
-  await page.getByLabel('E-posta').fill(YONETICI_EPOSTA);
+  await page.getByLabel('Kullanıcı adı').fill(YONETICI_EPOSTA);
   await page.getByLabel('Parola').fill(SAHTE_PAROLA);
   await page.getByRole('button', { name: 'Giriş yap' }).click();
   await expect(page.getByRole('tab', { name: 'Özet' })).toBeVisible();
@@ -21,10 +21,10 @@ async function bildirim_bekle(page, metin) {
 
 test('hatalı parola reddedilir', async ({ page }) => {
   await page.goto('/admin/');
-  await page.getByLabel('E-posta').fill(YONETICI_EPOSTA);
+  await page.getByLabel('Kullanıcı adı').fill(YONETICI_EPOSTA);
   await page.getByLabel('Parola').fill('yanlis');
   await page.getByRole('button', { name: 'Giriş yap' }).click();
-  await expect(page.getByRole('alert')).toHaveText('E-posta veya parola hatalı.');
+  await expect(page.getByRole('alert')).toHaveText('Kullanıcı adı veya parola hatalı.');
 });
 
 test('kurala göre toplu hariç tutma, geri alma ve işlem kaydı', async ({ page, request }) => {

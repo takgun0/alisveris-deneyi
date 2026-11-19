@@ -77,28 +77,38 @@ async function baslat() {
   else giris_goster();
 }
 
+// Kullanıcı adıyla giriş: Supabase Auth e-posta biçiminde bir adres ister.
+// "@" içermeyen girdiye bu uzantı eklenir (ör. takgun → takgun@deney.local).
+// Adres gerçek bir posta kutusu değildir; hesap panelden "Auto Confirm User"
+// ile açılır. Uzantı gizli değildir; güvenliği parola ve yoneticiler tablosu sağlar.
+const KULLANICI_ADI_UZANTISI = '@deney.local';
+export function giris_adresi(girdi) {
+  const temiz = String(girdi ?? '').trim();
+  return temiz.includes('@') ? temiz : temiz.toLowerCase() + KULLANICI_ADI_UZANTISI;
+}
+
 function giris_goster(mesaj = '') {
   ust_durum.replaceChildren();
-  const eposta = el('input', { type: 'email', name: 'eposta', autocomplete: 'username', required: true });
+  const eposta = el('input', { type: 'text', name: 'eposta', autocomplete: 'username', autocapitalize: 'none', spellcheck: 'false', required: true });
   const parola = el('input', { type: 'password', name: 'parola', autocomplete: 'current-password', required: true });
   const hata = el('p', { class: 'hata-metni', role: 'alert' }, mesaj);
   const dugme = el('button', { type: 'submit', class: 'dugme dugme-ana' }, 'Giriş yap');
   const form = el('form', { class: 'giris', novalidate: true },
     el('h2', {}, 'Yönetici girişi'),
     el('p', {}, 'Yalnızca araştırma ekibinin yönetici hesapları girebilir.'),
-    el('label', { class: 'alan' }, 'E-posta', eposta),
+    el('label', { class: 'alan' }, 'Kullanıcı adı', eposta),
     el('label', { class: 'alan' }, 'Parola', parola),
     hata, dugme);
   form.addEventListener('submit', async (o) => {
     o.preventDefault();
-    if (!eposta.value || !parola.value) { hata.textContent = 'E-posta ve parola gerekli.'; return; }
+    if (!eposta.value || !parola.value) { hata.textContent = 'Kullanıcı adı ve parola gerekli.'; return; }
     dugme.disabled = true;
     hata.textContent = '';
-    const { data, error } = await durum.istemci.auth.signInWithPassword({ email: eposta.value.trim(), password: parola.value });
+    const { data, error } = await durum.istemci.auth.signInWithPassword({ email: giris_adresi(eposta.value), password: parola.value });
     dugme.disabled = false;
     if (error) {
       hata.textContent = error.status === 400 || error.code === 'invalid_credentials'
-        ? 'E-posta veya parola hatalı.'
+        ? 'Kullanıcı adı veya parola hatalı.'
         : 'Giriş yapılamadı. Bağlantıyı kontrol edip tekrar deneyin.';
       return;
     }
